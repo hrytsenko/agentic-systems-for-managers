@@ -1,0 +1,33 @@
+---
+title: Home
+template: splash
+hero:
+  title: Managing Agentic Delivery
+  tagline: A lean guide for managers to talk about agents and bring them into delivery.
+---
+
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+export const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+## Principles
+
+The guide is driven by the need to judge cost and risk: whether a customer request or team proposal fits current resources and expertise, or needs more. That judgment leads to its principles:
+
+- **Ownership:** keep team and organization levels separate. Team changes carry less risk and need smaller budgets; organization changes need customer budget and approval.
+- **Depth:** build concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets managers identify costs and risks.
+
+## Modules
+
+<CardGrid>
+	<LinkCard
+		title="AI Literacy"
+		description="A shared language for models and agents, from a single agent to organization-wide control. Managers lead and join conversations that bridge business and engineering."
+		href={`${base}/ai-literacy/`}
+	/>
+	<LinkCard
+		title="AI SDLC"
+		description="A pragmatic model for adopting agents in software delivery, from teams to the organization. Managers deliver team capabilities and know which ones need organization-level support from the customer."
+		href={`${base}/ai-sdlc/`}
+	/>
+</CardGrid>
