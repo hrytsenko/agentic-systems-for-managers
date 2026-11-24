@@ -10,52 +10,42 @@ sidebar:
 
 A shared language for conversations about models and agents that bridge business and engineering.
 
-## Team level
+## Agents
 
 Discuss how agents work and how to extend them.
 
-### How agents work
-
-The parts of an agent and how they fit together.
-
-| Part         | Role                                       |
-| ------------ | ------------------------------------------ |
-| **Model**    | Predicts text from what is in its context. |
-| **Platform** | Serves models through an API.              |
-| **Agent**    | Gives the model memory and tools.          |
-| **Context**  | Agent instructions and knowledge.          |
-
-### How agents gain capabilities
-
-The parts that extend an agent with knowledge or reach.
-
-| Extension           | Adds                                      |
+| Capability          | Adds                                      |
 | ------------------- | ----------------------------------------- |
 | **Skills**          | Packaged knowledge for specialized tasks. |
 | **Tools (MCP)**     | Connections to external systems.          |
-| **Retrieval (RAG)** | Search over organization knowledge.       |
-| **Agents (A2A)**    | Collaboration with other agents.          |
+| **Subagents (A2A)** | Collaboration with other agents.          |
 
-## Organization level
+## Environments
 
-Discuss the shared infrastructure that keeps agents governed, safe, and affordable at scale.
+Discuss where agents find capabilities, where they run, what they can reach, and what they keep between sessions.
 
-### How organizations run agents
+| Component           | Purpose                                                       |
+| ------------------- | ------------------------------------------------------------- |
+| **Registries**      | Curated catalogs of approved skills and MCP servers.          |
+| **Sandboxes**       | Isolated spaces where agents run, cut off by default.         |
+| **Egress gateways** | One exit point from sandboxes to approved tools and services. |
+| **Memory stores**   | State and experience that agents keep between sessions.       |
 
-Controls that let teams run agents safely.
+## Platforms
 
-| Control        | Purpose                                                          |
-| -------------- | ---------------------------------------------------------------- |
-| **Gateways**   | One entry point to models for interactive and autonomous agents. |
-| **Registries** | Curated catalogs of approved skills and tools.                   |
-| **Sandboxes**  | Isolated environments for autonomous runs.                       |
+Discuss how platforms serve models and govern access to them.
 
-### How organizations build business agents
+| Component             | Purpose                                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| **Model gateways**    | One entry point to models for interactive and unattended agents. |
+| **Inference engines** | Software that runs models and turns requests into responses.     |
+| **Sovereign models**  | Open-weight models for data residency or regulated work.         |
 
-Controls for agents that work with business data.
+## Data
 
-| Control              | Purpose                                                        |
-| -------------------- | -------------------------------------------------------------- |
-| **Vector stores**    | Governed knowledge for retrieval.                              |
-| **Semantic caches**  | Reused answers to similar questions, cutting cost and latency. |
-| **Sovereign models** | Open-weight models for data residency or regulated work.       |
+Discuss how knowledge and past answers become searchable by meaning, and who governs them.
+
+| Component           | Purpose                                                        |
+| ------------------- | -------------------------------------------------------------- |
+| **Semantic caches** | Reused answers to similar questions, cutting cost and latency. |
+| **Vector stores**   | Governed knowledge for retrieval.                              |
