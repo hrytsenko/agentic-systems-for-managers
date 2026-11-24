@@ -12,6 +12,8 @@ Managers, not engineers. They judge whether a customer request or team proposal 
 
 The guide is split into topics, one page each. Each topic is self-sufficient: a manager can read it alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
 
+All content pages are `.mdx` files to avoid name clashes, such as `agents.md` with `AGENTS.md`.
+
 Within a topic, each term is defined once, where it first belongs, and is bold there. When a topic needs a term that another topic explains in depth, it explains the term in a clause or a sentence and leaves the depth to the other topic. Terms common to the whole guide, such as agent, model, or MCP, need no explanation.
 
 ### Topic

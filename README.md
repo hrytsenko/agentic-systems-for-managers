@@ -9,7 +9,7 @@ Published at [Agentic Systems for Managers](https://hrytsenko.github.io/agentic-
 ```text
 src/content/docs/
   index.mdx      # home page
-  <topic>.md     # topic page
+  <topic>.mdx    # topic page
 ```
 
 ## Develop
