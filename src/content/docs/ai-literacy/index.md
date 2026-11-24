@@ -33,13 +33,13 @@ Discuss where agents find capabilities, where they run, what they can reach, and
 
 ## Platforms
 
-Discuss how platforms serve models and govern access to them.
+Discuss how platforms turn agent requests into model responses and govern access to them.
 
 | Component             | Purpose                                                          |
 | --------------------- | ---------------------------------------------------------------- |
 | **Model gateways**    | One entry point to models for interactive and unattended agents. |
 | **Inference engines** | Software that runs models and turns requests into responses.     |
-| **Sovereign models**  | Open-weight models for data residency or regulated work.         |
+| **Sovereign models**  | Open-weight models for when public data terms fall short.        |
 
 ## Data
 
