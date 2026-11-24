@@ -1,10 +1,6 @@
 ---
 title: Data
 description: How business data becomes context for model decisions.
-slug: ai-literacy/data
-sidebar:
-  label: Data
-  order: 3
 ---
 
 A model knows only what it learned in training, so the organization's **data**, such as its documents and records, has to reach it through the **context**, everything the agent sends it with a task. Finding the right data for a task is called **retrieval**, and adding it to the context so the model can respond with it is **retrieval-augmented generation (RAG)**. Retrieval relies on a **data pipeline** that prepares data and on three ways to find it: **semantic search** for documents such as specifications, a **semantic layer** for records such as orders, and a **knowledge graph** for links between things such as suppliers and products.

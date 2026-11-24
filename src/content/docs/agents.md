@@ -1,10 +1,6 @@
 ---
 title: Agents
 description: How agents turn model decisions into completed tasks.
-slug: ai-literacy/agents
-sidebar:
-  label: Agents
-  order: 1
 ---
 
 An **agent** is software that lets a model solve tasks: the model makes the decisions, and the agent carries them out. A task can be **interactive**, where a person starts it, follows the progress, and approves actions. Or it can be **unattended**, where an event, such as a new pull request, starts it, and the agent runs alone until it finishes. Either way, the agent works with the **context** that holds everything it sends to the model, the **session** that carries the task from start to finish, and the **capabilities** that give the model more ways to solve it.

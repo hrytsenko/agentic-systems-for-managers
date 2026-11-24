@@ -2,7 +2,7 @@
 
 ## Vision
 
-A lean guide for managers to talk about agents and bring them into delivery. It builds concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets managers identify costs and risks.
+A lean guide for managers to talk about agentic systems and judge what it takes to run them. It builds concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets managers identify costs and risks.
 
 ## Audience
 
@@ -10,11 +10,11 @@ Managers, not engineers. They judge whether a customer request or team proposal 
 
 ## Structure
 
-Each module is split into topics, one page each. Each topic is self-sufficient: a manager can read it alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
+The guide is split into topics, one page each. Each topic is self-sufficient: a manager can read it alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
 
 Within a topic, each term is defined once, where it first belongs, and is bold there. When a topic needs a term that another topic explains in depth, it explains the term in a clause or a sentence and leaves the depth to the other topic. Terms common to the whole guide, such as agent, model, or MCP, need no explanation.
 
-### AI Literacy
+### Topic
 
 A topic is split into an intro that gives the whole picture and subtopics that give the details.
 

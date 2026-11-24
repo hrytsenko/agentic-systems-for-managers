@@ -1,10 +1,6 @@
 ---
 title: Platforms
 description: How platforms turn agent requests into model responses.
-slug: ai-literacy/platforms
-sidebar:
-  label: Platforms
-  order: 2
 ---
 
 The agent reaches the model through a **platform**. A platform combines three parts: the **model gateway** that accepts agent requests, the **inference engine** that runs the model, and the **model** itself that produces the response. A **public** platform, such as a model vendor's, runs all three as a service. A **sovereign** platform runs them on infrastructure the organization controls.

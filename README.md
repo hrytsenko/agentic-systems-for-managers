@@ -1,22 +1,22 @@
-# Managing Agentic Delivery
+# Agentic Systems for Managers
 
-A lean guide for managers to talk about agents and bring them into delivery.
+A lean guide to the concepts, costs, and risks of agentic systems.
 
-Published at [Managing Agentic Delivery](https://hrytsenko.github.io/managing-agentic-delivery/).
+Published at [Agentic Systems for Managers](https://hrytsenko.github.io/agentic-systems-for-managers/).
 
 ## Content
 
 ```text
 src/content/docs/
-  index.mdx      # program overview
-  <module>/      # program module
+  index.mdx      # home page
+  <topic>.md     # topic page
 ```
 
 ## Develop
 
 ```sh
 npm install
-npm run dev                 # run at http://localhost:4321/managing-agentic-delivery/
+npm run dev                 # run at http://localhost:4321/agentic-systems-for-managers/
 pre-commit install          # install hooks
 pre-commit run --all-files  # run hooks
 ```

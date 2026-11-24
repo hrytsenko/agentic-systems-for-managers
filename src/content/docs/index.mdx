@@ -2,25 +2,32 @@
 title: Home
 template: splash
 hero:
-  title: Managing Agentic Delivery
-  tagline: A lean guide for managers to talk about agents and bring them into delivery.
+  title: Agentic Systems for Managers
+  tagline: A lean guide to the concepts, costs, and risks of agentic systems.
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 export const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-## Modules
+## Topics
+
+An agent does not work alone. It needs a platform that runs the model and data to work with.
 
 <CardGrid>
 	<LinkCard
-		title="AI Literacy"
-		description="A shared language for agents, the platforms that serve them, and the data they work with. Managers lead and join conversations that bridge business and engineering."
-		href={`${base}/ai-literacy/`}
+		title="Agents"
+		description="How agents turn model decisions into completed tasks."
+		href={`${base}/agents/`}
 	/>
 	<LinkCard
-		title="AI SDLC"
-		description="A pragmatic model for adopting agents in software delivery, from teams to the organization. Managers deliver team capabilities and know which ones need organization-level support from the customer."
-		href={`${base}/ai-sdlc/`}
+		title="Platforms"
+		description="How platforms turn agent requests into model responses."
+		href={`${base}/platforms/`}
+	/>
+	<LinkCard
+		title="Data"
+		description="How business data becomes context for model decisions."
+		href={`${base}/data/`}
 	/>
 </CardGrid>
