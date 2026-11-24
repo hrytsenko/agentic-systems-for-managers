@@ -15,10 +15,9 @@ An **agent** is software that lets a model solve tasks: the model makes the deci
 
 Everything around the model that steers its work is called a **harness**, and two levels of it come together in the agent. The **project harness** is the content a team keeps in its project for agents: project instructions, capabilities, and checks, such as tests, that tell the agent what to fix. The **agent harness** is the agent's own machinery: its built-in instructions, tools, and permissions, and the way it runs sessions and manages the context. Teams write the project harness but only configure the agent harness.
 
-:::tip[Remember]
+:::tip[Takeaways]
 
 - **Agents get only the access they need.** The model decides, and its actions run on real systems.
-- **Project instructions stay short.** Point them to knowledge, because long ones cost more and steer less.
 - **Capabilities belong in the project.** Shared and reviewed, they make the agent work the same for everyone.
 - **Unattended sessions need limits.** Cap steps and budget, because no one is there to stop them.
 

@@ -12,40 +12,31 @@ A shared language for conversations about models and agents that bridge business
 
 ## Agents
 
-Discuss how agents work and how to extend them.
+Discuss how agents turn model decisions into completed tasks.
 
-| Capability          | Adds                                      |
-| ------------------- | ----------------------------------------- |
-| **Skills**          | Packaged knowledge for specialized tasks. |
-| **Tools (MCP)**     | Connections to external systems.          |
-| **Subagents (A2A)** | Collaboration with other agents.          |
-
-## Environments
-
-Discuss where agents find capabilities, where they run, what they can reach, and what they keep between sessions.
-
-| Component           | Purpose                                                       |
-| ------------------- | ------------------------------------------------------------- |
-| **Registries**      | Curated catalogs of approved skills and MCP servers.          |
-| **Sandboxes**       | Isolated spaces where agents run, cut off by default.         |
-| **Egress gateways** | One exit point from sandboxes to approved tools and services. |
-| **Memory stores**   | State and experience that agents keep between sessions.       |
+| Component        | Purpose                                                               |
+| ---------------- | --------------------------------------------------------------------- |
+| **Context**      | Instructions and knowledge that help the model make better decisions. |
+| **Session**      | Steps that carry a task from start to finish, within limits.          |
+| **Capabilities** | More ways to solve tasks: skills, tools, and subagents.               |
 
 ## Platforms
 
-Discuss how platforms turn agent requests into model responses and govern access to them.
+Discuss how platforms turn agent requests into model responses.
 
-| Component             | Purpose                                                          |
-| --------------------- | ---------------------------------------------------------------- |
-| **Model gateways**    | One entry point to models for interactive and unattended agents. |
-| **Inference engines** | Software that runs models and turns requests into responses.     |
-| **Sovereign models**  | Open-weight models for when public data terms fall short.        |
+| Component             | Purpose                                                                |
+| --------------------- | ---------------------------------------------------------------------- |
+| **Model gateways**    | One entry point to models that controls access, usage, and content.    |
+| **Inference engines** | Software that runs models and turns requests into responses.           |
+| **Sovereign models**  | Open-weight models for when a public platform's data terms fall short. |
 
 ## Data
 
-Discuss how knowledge and past answers become searchable by meaning, and who governs them.
+Discuss how business data becomes context for model decisions.
 
-| Component           | Purpose                                                        |
-| ------------------- | -------------------------------------------------------------- |
-| **Semantic caches** | Reused answers to similar questions, cutting cost and latency. |
-| **Vector stores**   | Governed knowledge for retrieval.                              |
+| Component            | Purpose                                                         |
+| -------------------- | --------------------------------------------------------------- |
+| **Data pipelines**   | A copy of source data, prepared for retrieval and kept in sync. |
+| **Semantic search**  | Documents found by meaning, through embeddings.                 |
+| **Semantic layers**  | Business definitions that give records one agreed meaning.      |
+| **Knowledge graphs** | Linked facts for questions that span systems.                   |

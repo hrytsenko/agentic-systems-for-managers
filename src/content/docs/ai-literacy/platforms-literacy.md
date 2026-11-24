@@ -17,7 +17,7 @@ A **harness** is everything around the model that steers its work. After the pro
 
 The choice between a public and a sovereign platform starts with the data in requests. On a public platform, the vendor's **data terms** decide what happens to it: whether it is used for training, how long it is kept, and in which region it is processed. Enterprise agreements usually exclude training and limit retention, and a regional deployment can meet **data residency**, the need to keep data in a given country. A sovereign platform is needed only where these fall short.
 
-:::tip[Remember]
+:::tip[Takeaways]
 
 - **Data terms come first.** Training use, retention, and region decide whether a public platform is enough.
 - **Rate limits slow, budgets stop.** Agents wait out a rate limit, but a spent budget leaves tasks unfinished, so plan both ahead.
