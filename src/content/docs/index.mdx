@@ -2,32 +2,34 @@
 title: Home
 template: splash
 hero:
-  title: Agentic Systems for Managers
-  tagline: A lean guide to the concepts, costs, and risks of agentic systems.
+  title: Enterprise Agentic Systems
+  tagline: A lean guide for managers and staff engineers to the concepts, costs, and risks of agentic systems.
 ---
 
 import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 export const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-## Topics
+Agentic systems need agents to solve tasks, models to make decisions, and data to ground them. They send the organization's data to whoever runs each part and act on what comes back, so a large organization has to control both where its data goes and what its agents do.
 
-An agent does not work alone. It needs a platform that runs the model and data to work with.
+When a vendor runs a part, its **data terms** decide what happens to the data: whether it is used for training, how long it is kept, and in which region it is processed. Enterprise agreements usually exclude training and limit retention, and a regional deployment can meet **data residency**, the need to keep data in a given country. Where the terms are enough, the vendor's solution is simpler and usually the better choice. Where they fall short, the organization has to own that part, and only for the work that needs it, because it takes on the cost and the expertise that a vendor would otherwise bring. Either way, it has to govern its agents, because data terms do not limit what agents do.
+
+## Topics
 
 <CardGrid>
 	<LinkCard
-		title="Agents"
-		description="How agents turn model decisions into completed tasks."
-		href={`${base}/agents/`}
+		title="Governed agents"
+		description="What governed agents are and what it takes to run them."
+		href={`${base}/governed-agents/`}
 	/>
 	<LinkCard
-		title="Platforms"
-		description="How platforms turn agent requests into model responses."
-		href={`${base}/platforms/`}
+		title="Sovereign models"
+		description="What sovereign models are and what it takes to run them."
+		href={`${base}/sovereign-models/`}
 	/>
 	<LinkCard
-		title="Data"
-		description="How business data becomes context for model decisions."
-		href={`${base}/data/`}
+		title="Semantic data"
+		description="What semantic data is and what it takes to build it."
+		href={`${base}/semantic-data/`}
 	/>
 </CardGrid>

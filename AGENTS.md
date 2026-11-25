@@ -2,17 +2,21 @@
 
 ## Vision
 
-A lean guide for managers to talk about agentic systems and judge what it takes to run them. It builds concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets managers identify costs and risks.
+A lean guide for managers and staff engineers to talk about enterprise agentic systems and judge what it takes to run them. It builds concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets readers identify costs and risks.
+
+The guide focuses on enterprise capabilities, which a large organization sets up once for many teams. The organization governs whatever its agents use, and owns what vendors' terms do not cover, because this lets it control data residency and major security risks. The guide describes what the organization sets up and runs, so a page mentions vendors only where a decision depends on them, such as the data terms on the home page.
 
 ## Audience
 
-Managers, not engineers. They judge whether a customer request or team proposal fits current resources and expertise, or needs more.
+Managers and staff engineers. They judge whether a customer request or team proposal fits current resources and expertise, or needs more. A detail stays if it changes the cost, the risk, or who has to own it, and implementation details beyond that stay out.
 
 ## Structure
 
-The guide is split into topics, one page each. Each topic is self-sufficient: a manager can read it alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
+The guide is split into topics, one page each. Each topic is self-sufficient: it can be read alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
 
-All content pages are `.mdx` files to avoid name clashes, such as `agents.md` with `AGENTS.md`.
+The home page explains the reasons that span topics, such as data terms, and says when a vendor's solution is enough. A topic repeats such a reason only as a clause, where a decision depends on it.
+
+A topic's title names the demanding version of a capability, such as governed agents or sovereign models.
 
 Within a topic, each term is defined once, where it first belongs, and is bold there. When a topic needs a term that another topic explains in depth, it explains the term in a clause or a sentence and leaves the depth to the other topic. Terms common to the whole guide, such as agent, model, or MCP, need no explanation.
 
@@ -20,8 +24,10 @@ Within a topic, each term is defined once, where it first belongs, and is bold t
 
 A topic is split into an intro that gives the whole picture and subtopics that give the details.
 
-The intro defines the topic and lists its three or four core concepts as a numbered list, each saying in a few sentences what the concept is and does. Short paragraphs after the list explain what spans the concepts, such as the harness levels or the choice between a public and a sovereign platform.
+The intro defines the topic and names its three or four core concepts in one sentence, with a clause on what each does.
 
-A Takeaways tip (`:::tip[Takeaways]`) closes the intro. It is not a summary: it holds three takeaways that significantly impact decisions or require actions, the most important first. Each is a short bold title followed by one short sentence. Readers may stop after the intro, so each takeaway stands on its own, without terms that only the subtopics explain.
+Each core concept is a capability that the organization sets up for many teams: it has real tooling, takes expertise to run, and brings value to the business.
 
-Subtopics follow the core concepts in the same order, and a subtopic can narrow to what matters for decisions, such as sovereign models. Each opens with a short paragraph that can restate the concept and repeat its term in bold, then lists its three parts, saying what each is, how it works, and what it costs. A closing paragraph can explain what spans the parts. Subtopics have no tips of their own.
+A Takeaways tip (`:::tip[Takeaways]`) closes the intro. It is not a summary: it holds two or three takeaways that significantly impact decisions or require actions, the most important first. Each is a short bold title that names an action, followed by one short sentence that says why. Readers may stop after the intro, so each takeaway stands on its own, without terms that only the subtopics explain.
+
+Subtopics follow the core concepts in the same order. Each opens with a short paragraph that explains the concept and repeats its term in bold, then lists its three parts, saying what each is and how it works. The parts build on each other, and a closing paragraph can explain what spans them. Subtopics have no tips of their own.
