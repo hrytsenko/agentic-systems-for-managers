@@ -5,7 +5,7 @@ description: What governed agents are and what it takes to run them.
 
 An **agent** is software that lets a model solve tasks: the model makes the decisions, and the agent carries them out with **tools**, actions on other systems. For each decision, the agent sends the model the **context**, everything it has for the task so far, and the model responds with an action to take or the final answer.
 
-**Governed agents** use only what the organization has approved and reach models and other systems only by routes that it controls, so they replace **shadow AI**, the use of AI that the organization has not approved and cannot see. They rely on three parts: a **curated registry** that holds approved agents and what they may use, an **AI gateway** that controls requests to models, and an **MCP gateway** that controls actions on other systems.
+**Governed agents** use only what the organization has approved and reach models and other systems only by routes that it controls, so they replace **shadow AI**, the use of AI that the organization has not approved and cannot see. They rely on three capabilities: a **curated registry** that holds approved agents and what they may use, an **AI gateway** that controls requests to models, and an **MCP gateway** that controls actions on other systems.
 
 :::tip[Takeaways]
 
