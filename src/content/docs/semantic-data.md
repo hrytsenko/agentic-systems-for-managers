@@ -9,7 +9,7 @@ A model knows only what it learned in training, so the organization's **data**, 
 
 :::tip[Takeaways]
 
-- **Set content ownership.** Only the organization can decide which content is correct and what it means, so each source needs an owner.
+- **Set ownership.** Only the organization can decide which content is correct and what it means, so each source needs an owner.
 - **Propagate permissions.** A copy without the permissions of its source can show anyone what only some may see.
 
 :::

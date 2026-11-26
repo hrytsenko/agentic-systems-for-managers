@@ -1,0 +1,43 @@
+/* @theme guide */
+
+@import 'default';
+
+section {
+	--accent: #3447b3;
+	--tip: #eef1fb;
+	font-size: 26px;
+	align-content: start;
+	padding: 56px 72px;
+}
+
+h1 {
+	color: var(--accent);
+	font-size: 1.7em;
+	margin-bottom: 0.4em;
+}
+
+li + li {
+	margin-top: 0.3em;
+}
+
+/* A blockquote holds a topic's takeaways, like the tip that closes its intro in the guide. */
+blockquote {
+	background: var(--tip);
+	border-left: 0.25em solid var(--accent);
+	color: inherit;
+	margin-top: 0.8em;
+	padding: 0.6em 1em;
+}
+
+blockquote::before,
+blockquote::after {
+	content: none;
+}
+
+blockquote ul {
+	margin-bottom: 0;
+}
+
+section::after {
+	color: var(--accent);
+}

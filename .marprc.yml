@@ -1,0 +1,3 @@
+inputDir: deck
+output: dist/deck
+themeSet: deck/theme.css

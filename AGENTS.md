@@ -27,3 +27,11 @@ Subtopics follow the order in which the intro names them. Each opens with a shor
 ## Takeaways
 
 A Takeaways tip (`:::tip[Takeaways]`) closes a topic's intro. It is not a summary but the two or three most important takeaways, those that significantly impact decisions or require actions, the most important first. Each is a short bold title that names an action, followed by one short sentence that explains why. Readers may stop after the intro, so each takeaway stands on its own, without terms that only the subtopics explain.
+
+## Slides
+
+The deck presents the guide, which people then read on their own. A slide is not a copy of a page but serves the presentation: it can reword, summarize, reorder, and illustrate the content with analogies and examples, but it cannot contradict or extend it. When a slide needs something that the guide does not say, the guide changes first, and when the guide changes, the slides that depend on it change too.
+
+Extending means adding a claim, an AI term, or an AI concept that the guide does not have. Other wording is free where it makes a slide clearer or fits its layout. A summary keeps the conditions that a statement depends on, because without them it can contradict the guide. An analogy or an example illustrates a point that the guide makes and stays within its scope.
+
+The deck is slides-first: the presenter reads the content from the slides, not from speaker notes. Notes can add details that the guide gives, and they follow the same rules as slides.

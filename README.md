@@ -8,15 +8,19 @@ Published at [Enterprise Agentic Systems](https://hrytsenko.github.io/enterprise
 
 ```text
 src/content/docs/
-  index.mdx      # home page
-  <topic>.md     # topic page
+  index.mdx       # home page
+  <topic>.md      # topic page
+deck/
+  index.md        # slides
 ```
 
 ## Develop
 
 ```sh
 npm install
-npm run dev                 # run at http://localhost:4321/enterprise-agentic-systems/
+npm run guide               # run guide at http://localhost:4321/enterprise-agentic-systems/
+npm run deck                # run deck at http://localhost:8080/
+npm run build               # build the guide and deck
 pre-commit install          # install hooks
 pre-commit run --all-files  # run hooks
 ```

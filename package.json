@@ -5,13 +5,15 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "guide": "astro dev",
+    "build": "astro build && marp",
+    "deck": "marp --server"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.42.8",
     "astro": "^7.4.4"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.5.1"
   }
 }
