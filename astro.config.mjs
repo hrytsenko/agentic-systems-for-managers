@@ -11,7 +11,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Enterprise Agentic Systems',
-			description: 'A lean guide for managers and staff engineers to the concepts, costs, and risks of agentic systems.',
+			description: 'A lean guide for managers and staff engineers to the concepts, costs, and risks of agentic systems for business.',
 			social: [{ icon: 'github', label: 'GitHub', href: repo }],
 			customCss: ['./src/styles/custom.css'],
 			sidebar: ['governed-agents', 'sovereign-models', 'semantic-data'],

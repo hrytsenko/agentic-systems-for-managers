@@ -1,6 +1,6 @@
 # Enterprise Agentic Systems
 
-A lean guide for managers and staff engineers to the concepts, costs, and risks of agentic systems.
+A lean guide for managers and staff engineers to the concepts, costs, and risks of agentic systems for business.
 
 Published at [Enterprise Agentic Systems](https://hrytsenko.github.io/enterprise-agentic-systems/).
 

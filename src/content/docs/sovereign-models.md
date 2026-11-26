@@ -22,7 +22,7 @@ An **inference gateway** is the front door to the models that the organization r
 2. **Balancing.** Busy models run as several copies of the engine, called **replicas**, and the gateway picks one for each request. Requests differ so much in size that equal shares work poorly, so the gateway looks at the queue and the free memory of each replica. With **cache-aware** balancing, it also prefers a replica that has already processed the opening part of the request, which saves GPU time and starts the response sooner.
 3. **Rollouts.** Agents ask for a model by a name, and the gateway decides which version serves it, so a version can change without changing the agents. A new version first gets a small share of requests, called a **canary**, and the share grows while results hold up or drops back to zero when they do not.
 
-The gateway measures how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold code or customer data, so they need the same residency and retention rules as that data.
+The gateway measures how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold personal or confidential data, so they need the same residency and retention rules as that data.
 
 A reference tool is [llm-d](https://llm-d.ai/), which covers admission, balancing, and rollouts on Kubernetes.
 
