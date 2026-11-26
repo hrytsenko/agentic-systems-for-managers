@@ -4,7 +4,7 @@
 
 A lean guide for managers and staff engineers to talk about enterprise agentic systems and judge what it takes to run them. It builds concepts first, deep enough to connect business needs with technical approaches. A clear foundation, not a shallow overview, lets readers identify costs and risks.
 
-The home page sets the scope: agents that do business work, not those across the software development lifecycle (SDLC). Examples and data come from business work, and software work appears only where it concerns agent assets, such as a skill's scripts or their review.
+The home page sets the scope: agents that do business work, not those across the software development lifecycle (SDLC), and not how teams build, host, and evaluate agents. Examples and data come from business work, and software work appears only where it concerns agent assets, such as a skill's scripts or their review.
 
 The guide focuses on enterprise capabilities, which a large organization sets up once for many teams, and describes what the organization runs rather than what vendors offer. Pages mention vendors only where a decision depends on them, such as the data terms on the home page.
 
@@ -16,7 +16,7 @@ Managers and staff engineers. They judge whether a customer request or team prop
 
 The guide is split into topics, one page each. Each topic is self-sufficient: it can be read alone and in any order, so topics do not link to each other, and navigation comes from the sidebar.
 
-The home page has three paragraphs: a brief intro, the scope, and the reasons that span topics, such as data terms. The reasons state the point first and then the details, including when a vendor's solution is enough. A topic repeats such a reason only as a clause, where a decision depends on it.
+The home page has four paragraphs: a brief intro, the scope, the reasons that span topics, such as data terms, and the teams that the parts need. The reasons state the point first and then the details, including when a vendor's solution is enough. A topic repeats such a reason only as a clause, where a decision depends on it.
 
 A topic's title names the demanding version of a capability, such as governed agents or sovereign models.
 
