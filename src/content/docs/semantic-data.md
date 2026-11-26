@@ -3,7 +3,7 @@ title: Semantic data
 description: What semantic data is and what it takes to build it.
 ---
 
-A model knows only what it learned in training, so the organization's **data**, such as its documents and records, has to reach it through the **context**, the input that it gets with a task. Finding the right data for a task is called **retrieval**, and adding it to the context so the model can respond with it is **retrieval-augmented generation (RAG)**.
+A model knows only what it learned in training, so the organization's **data**, such as its documents and records, has to reach it through the **context**, everything that it gets for a task. Finding the right data for a task is called **retrieval**, and adding it to the context so the model can respond with it is **retrieval-augmented generation (RAG)**.
 
 **Semantic data** is data that agents can find by its meaning, rather than by exact words or by table and column names. It relies on a **data pipeline** that prepares a copy of it and on three ways to find it: **semantic search** that matches documents to a question, a **semantic layer** that applies business definitions to records, and a **knowledge graph** that links things, such as suppliers and products.
 
