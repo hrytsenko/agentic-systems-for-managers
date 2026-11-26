@@ -24,7 +24,7 @@ An **inference gateway** is the front door to the models that the organization r
 
 The gateway measures how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold personal or confidential data, so they need the same residency and retention rules as that data.
 
-A reference tool is [llm-d](https://llm-d.ai/), which covers admission, balancing, and rollouts on Kubernetes.
+A reference product is [llm-d](https://llm-d.ai/), which covers admission, balancing, and rollouts on Kubernetes.
 
 ## Inference engines
 
@@ -36,7 +36,7 @@ An **inference engine** is the software that runs a model on GPUs. The work it d
 
 **Scheduling** decides how many requests the engine runs together and how many wait in a queue. Running more together uses the GPUs better, but each response takes longer, and the memory for their KV caches limits how many fit.
 
-A reference tool is [vLLM](https://vllm.ai/), a widely used engine that llm-d works with.
+A reference product is [vLLM](https://vllm.ai/), a widely used engine that llm-d works with.
 
 ## Open-weight models
 
@@ -48,4 +48,4 @@ An **open-weight model** is published with its **weights**, the numbers learned 
 
 GPUs can be rented or owned. Rented ones need no large purchase and can be given up later, but the cloud provider's terms apply, while owned ones keep the data on the organization's own premises. Either way, they need **provisioning**: tools such as Kubernetes assign GPUs to engines and scale engines as load changes.
 
-A reference model family is [Qwen](https://huggingface.co/Qwen), with open-weight models of many sizes, and a reference tool for running models on Kubernetes is [KServe](https://kserve.github.io/website/), which works with both vLLM and llm-d.
+A reference product is [Qwen](https://huggingface.co/Qwen), a model family with open-weight models of many sizes.

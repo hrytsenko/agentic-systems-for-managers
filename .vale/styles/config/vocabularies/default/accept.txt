@@ -1,4 +1,3 @@
 agentgateway
 agentregistry
 Docling
-KServe

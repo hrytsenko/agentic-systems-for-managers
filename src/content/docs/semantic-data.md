@@ -24,7 +24,7 @@ A **data pipeline** runs **ETL**: it extracts data from source systems, transfor
 
 A data pipeline creates a new copy of the data, separate from its sources: their permissions do not protect it, and their changes do not reach it on their own. For security, each chunk keeps the permissions of its document as metadata for search to apply. Where permissions cannot be kept, it is safer to copy only what everyone who can search may see. The embedding model and the vector store also receive the data, so they have to meet the same rules for where it may be processed and kept. For reliability, each chunk also keeps its **provenance**, a record of where it came from, such as the source and date, and its **ownership**, who is responsible for the content, so answers can be checked and errors fixed in the source. For operations, regular runs keep the copy and its permissions current, deletions and retention rules remove chunks, and monitoring catches failed runs, which are easy to miss because search keeps working on the old copy.
 
-A reference tool is [Docling](https://docling.ai/), which turns documents into text and chunks for an existing pipeline.
+A reference product is [Docling](https://docling.ai/), which turns documents into text and chunks for an existing pipeline.
 
 ## Semantic search
 
@@ -36,7 +36,7 @@ A reference tool is [Docling](https://docling.ai/), which turns documents into t
 
 In basic RAG, one search runs before the model responds. **Hybrid search** adds a keyword search, which finds exact words, and combines both results. In **agentic search**, the model decides what to look for and when to search again, which finds more but takes more steps. A **semantic cache** uses matching for another purpose: it reuses a past answer when a similar question comes, which saves a request, but a similar question can need a different answer, and the past answer can hold what the person asking now may not see.
 
-A reference tool is [Qdrant](https://qdrant.tech/), which covers matching and filtering and works with rerankers, while permissions are left to the application.
+A reference product is [Qdrant](https://qdrant.tech/), which covers matching and filtering and works with rerankers, while permissions are left to the application.
 
 ## Semantic layers
 
@@ -50,7 +50,7 @@ A semantic layer can be part of a reporting tool, part of a data platform, or a 
 
 The cost is delay: a question outside the definitions waits until departments agree on new ones.
 
-A reference tool is [WrenAI](https://github.com/Canner/WrenAI), which gives agents definitions and queries over MCP, while permissions take its paid edition.
+A reference product is [WrenAI](https://www.getwren.ai/), which gives agents definitions and queries over MCP, while permissions take its paid edition.
 
 ## Knowledge graphs
 
@@ -62,4 +62,4 @@ A **knowledge graph** stores facts as things and the links between them, so one 
 
 Approaches to knowledge graphs differ in how the facts get in. With **GraphRAG**, a model extracts them from documents, and the search follows links from the matching chunks, which takes the least work from people but leaves the facts unchecked. With a **graph database**, a pipeline loads them, and the model explores them by writing its own queries, which is the most flexible but leaves the ontology and the facts to the team. With an **ontology platform**, the ontology is mapped to existing data and can come with actions, such as approving an order, which suits business processes but ties the organization to the platform.
 
-A reference tool is [Neo4j](https://neo4j.com/), which covers facts and queries, while permissions take its paid edition.
+A reference product is [Neo4j](https://neo4j.com/), which covers facts and queries, while permissions take its paid edition.

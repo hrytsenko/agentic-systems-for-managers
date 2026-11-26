@@ -24,7 +24,7 @@ A **curated registry** keeps agents and what they use as assets that have owners
 
 Registries differ in where the catalog is kept and who enforces it. With a **shared repository**, pull requests serve as review and approval, which is often enough for a few teams but enforces nothing by itself. With an **agent registry**, one catalog with an approval workflow covers all kinds of agents, but enforcement is left to the settings of each.
 
-A reference tool is [agentregistry](https://aregistry.ai/), which covers assets and their approval.
+A reference product is [agentregistry](https://aregistry.ai/), which covers assets and their approval.
 
 ## AI gateways
 
@@ -36,7 +36,7 @@ An **AI gateway** is the one way from the organization's agents to models, inclu
 
 The gateway counts input and output tokens per caller and model, which is called **metering**, so costs can be compared across models and split between teams. When the organization runs models to keep data inside, it has to run the gateway too, or the data leaves through it.
 
-A reference tool is [LiteLLM](https://www.litellm.ai/), which covers access, routing, and screening, while SSO takes its paid edition.
+A reference product is [LiteLLM](https://www.litellm.ai/), which covers access, routing, and screening, while SSO takes its paid edition.
 
 ## MCP gateways
 
@@ -46,4 +46,4 @@ An **MCP gateway** is one entry point to all MCP servers. What an agent can do i
 2. **Identities.** An agent can act **on behalf of a user**, so it reaches only what that user may, and records name both. The gateway does this by **token exchange**: it swaps the proof of who the user is for short-lived access to one system. When no user is there, such as when an event starts the agent, it acts under a **service account**, an identity of its own. With one service account for everyone, though, anyone who can use the agent gets what that account can see. Either way, permissions that are too broad for the person or the account are too broad for the agent.
 3. **Credentials.** Agents need **credentials**, such as keys and tokens, to access outside systems. Kept with the agent, they could leak through it, so a **credential vault** keeps them, and the gateway adds them to calls on the way out. Each credential is narrow and short-lived, usually through **OAuth**, a standard for access that can be limited and revoked, and the vault renews it. A system that offers only permanent keys with full access needs the gateway's rules to narrow it.
 
-A reference tool is [agentgateway](https://agentgateway.dev/), which covers tools and identities and works with a separate credential vault.
+A reference product is [agentgateway](https://agentgateway.dev/), which covers tools and identities and works with a separate credential vault.
