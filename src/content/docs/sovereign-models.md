@@ -22,7 +22,7 @@ An **inference gateway** is the front door to the models that the organization r
 2. **Balancing.** Busy models run as several copies of the engine, called **replicas**, and the gateway picks one for each request. Requests differ so much in size that equal shares work poorly, so the gateway looks at the queue and the free memory of each replica. With **cache-aware** balancing, it also prefers a replica that has already processed the opening part of the request, which saves GPU time and starts the response sooner.
 3. **Rollouts.** Agents ask for a model by a name, and the gateway decides which version serves it, so a version can change without changing the agents. A new version first gets a small share of requests, called a **canary**, and the share grows while results hold up or drops back to zero when they do not.
 
-The gateway measures how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold personal or confidential data, so they have to follow the same rules as that data on where it is kept and for how long.
+**Monitoring** tracks how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold personal or confidential data, so they have to follow the same rules as that data on where it is kept and for how long.
 
 A reference product is [llm-d](https://llm-d.ai/), which covers admission, balancing, and rollouts on Kubernetes.
 
@@ -46,6 +46,6 @@ An **open-weight model** is published with its **weights**, the numbers learned 
 2. **GPUs.** Running a model means multiplying huge tables of weights for every token, which takes GPUs. The weights must fit in GPU memory, together with the KV cache of every request in progress. At 16 bits per weight, a 27B model takes about 55 GB of memory before any KV cache, and a 750B model takes about 1.5 TB. Long requests, and many of them at once, need still more memory, because the KV cache grows with every token. When a model does not fit in one GPU, the engine splits it across several.
 3. **Quantization.** It stores each weight with fewer bits, such as 8 instead of 16, so the same model takes half the memory and fits on fewer GPUs. Many open-weight models are also published in quantized versions. Responses get somewhat worse, more so with fewer bits, and how much varies by model and task.
 
-GPUs can be rented or owned. Rented ones need no large purchase and can be given up later, but the cloud provider's terms apply, while owned ones keep the data on the organization's own premises. Either way, they need **provisioning**: tools such as Kubernetes assign GPUs to engines and scale engines as load changes.
+**Provisioning** assigns GPUs to engines and scales the engines as load changes, with tools such as Kubernetes. The GPUs can be rented or owned. Rented ones need no large purchase and can be given up later, but the cloud provider's terms apply, while owned ones keep the data on the organization's own premises.
 
 A reference product is [Qwen](https://huggingface.co/Qwen), a model family with open-weight models of many sizes.

@@ -101,6 +101,51 @@ Sovereign models run on a platform that the organization controls, so the data i
 
 ---
 
+<!-- _header: Sovereign models -->
+<!-- _footer: "Reference: [llm-d](https://llm-d.ai/), which runs on Kubernetes." -->
+
+# Inference gateway
+
+The front door to the models that the organization runs. It controls requests on their way in.
+
+- **Admission.** Let requests in, queue or refuse them, and order them by priorities and fairness.
+- **Balancing.** Pick a replica for each request by its queue, free memory, and cache.
+- **Rollouts.** Resolve each model name to a version, and give a new one a canary share that grows while results hold up.
+
+**Monitoring** tracks waits, load, and use per caller to plan capacity and split its cost, and logs of full requests follow the rules of their data.
+
+---
+
+<!-- _header: Sovereign models -->
+<!-- _footer: "Reference: [vLLM](https://vllm.ai/), a widely used engine that llm-d works with." -->
+
+# Inference engine
+
+The software that runs a model on GPUs. Turning a request into a response is called inference.
+
+- **Input tokens.** Split the request into tokens, which differ by model, and process them all at once in prefill.
+- **Output tokens.** Produce the response one token at a time, with reasoning models writing their thinking first.
+- **KV cache.** Keep each token's work for later passes, and with prompt caching, reuse a matching prefix in later requests.
+
+**Scheduling** decides how many requests run together: more use the GPUs better but slow each response, and KV cache memory limits how many fit.
+
+---
+
+<!-- _header: Sovereign models -->
+<!-- _footer: "Reference: [Qwen](https://huggingface.co/Qwen), a model family with open-weight models of many sizes." -->
+
+# Open-weight model
+
+A model published with its weights, the numbers learned in training, so the organization can download and run it.
+
+- **Weights.** Choose by size in parameters, context window, and license, and send simpler work to smaller models.
+- **GPUs.** Fit the weights and KV caches in GPU memory, where a 27B model at 16 bits alone takes about 55 GB, and split larger models across GPUs.
+- **Quantization.** Store weights with fewer bits, such as 8 instead of 16, to halve memory for somewhat worse responses.
+
+**Provisioning** assigns GPUs to engines and scales them with load, whether the GPUs are rented under a cloud provider's terms or owned on premises.
+
+---
+
 # Semantic data
 
 Semantic data is data that agents can find by its meaning, rather than by exact words or database fields. Still, a model knows only what it learned in training, so the data has to reach it with each task.
