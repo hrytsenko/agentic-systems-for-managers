@@ -5,7 +5,7 @@ description: What governed agents are and what it takes to run them.
 
 An **agent** is software that lets a model solve tasks: the model makes the decisions, and the agent carries them out with **tools**, actions on other systems. For each decision, the agent sends the model the **context**, everything it has for the task so far, and the model responds with an action to take or the final answer.
 
-**Governed agents** use only what the organization has approved and reach models and other systems only by routes that it controls, so they replace **shadow AI**, the use of AI that the organization has not approved and cannot see. They rely on three capabilities: a **curated registry** that holds approved agents and what they may use, an **AI gateway** that controls requests to models, and an **MCP gateway** that controls actions on other systems.
+**Governed agents** use only what the organization has approved and reach models and other systems only by routes that it controls, so they replace **shadow AI**, the use of AI that the organization has not approved and cannot see. They rely on three capabilities: an **agent registry** that holds approved agents and what they may use, an **AI gateway** that controls requests to models, and an **MCP gateway** that controls actions on other systems.
 
 :::tip[Takeaways]
 
@@ -14,15 +14,15 @@ An **agent** is software that lets a model solve tasks: the model makes the deci
 
 :::
 
-## Curated registries
+## Agent registries
 
-A **curated registry** keeps agents and what they use as assets that have owners and versions, so teams share them instead of copying them between projects. People rarely see what an agent uses during a task, so the check has to come before it.
+An **agent registry** keeps agents and what they use as assets that have owners and versions, so teams share them instead of copying them between projects. People rarely see what an agent uses during a task, so the check has to come before it.
 
 1. **Assets.** As an asset, an agent is a **definition**: instructions for its work, the recommended model, and references to the capabilities it needs. A **skill** adds instructions for a process, with documents and scripts where needed. An **MCP server** adds tools to reach other systems. A **plugin** bundles skills and MCP servers that work together into one asset. References replace copies, so one capability serves many agents, and they show what each agent can do.
 2. **Catalogs.** A **catalog** lists each asset with its owner, version, and the access it needs, and agents get their assets from it. An assistant that people use gets them when it is installed or starts, and **managed settings**, which the organization sets and users cannot change, keep it to the catalog. An agent inside a business process gets them when it is deployed, so what runs is what was tested. Some agents also search the catalog during a task, which finds more but can combine assets that were never tried together. An **entitlement** decides who may use an asset, usually by the groups that people belong to in the organization's identity system, so a payroll agent is offered only to the payroll team.
 3. **Approval.** New wording, another capability, or another model can change how an agent behaves, so each version is tried on real tasks before it is used. The check also covers where the asset comes from and what instructions, descriptions, and scripts it carries. Approval covers one version, which is **pinned**, fixed until the next one is approved. An approved asset can be withdrawn, and the references show which agents lose it.
 
-Registries differ in where the catalog is kept and who enforces it. With a **shared repository**, pull requests serve as review and approval, which is often enough for a few teams but enforces nothing by itself. With an **agent registry**, one catalog with an approval workflow covers all kinds of agents, but enforcement is left to the settings of each.
+An agent, together with the assets and settings that it loads, makes up its **harness**: everything around the model that decides what it can do. The same model can behave differently in another harness, so what is tried and pinned is the harness as a whole.
 
 A reference product is [agentregistry](https://aregistry.ai/), which covers assets and catalogs, while plugins and approval take its paid edition.
 

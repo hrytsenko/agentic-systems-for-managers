@@ -34,7 +34,7 @@ Where the terms are enough, the vendor's solution is simpler and usually the bet
 
 Adopting agents means controlling the assets that they use, such as skills and MCP servers, and their routes to models and other systems. Still, governance is only as useful as it is complete: any route around it opens the way to **shadow AI**.
 
-- **Curated registry** holds approved agents and what they may use.
+- **Agent registry** holds approved agents and what they may use.
 - **AI gateway** controls requests to models.
 - **MCP gateway** controls actions on other systems.
 
@@ -46,7 +46,7 @@ Adopting agents means controlling the assets that they use, such as skills and M
 <!-- _header: Governed agents -->
 <!-- _footer: "Reference: [agentregistry](https://aregistry.ai/), with plugins and approval in the paid edition." -->
 
-# Curated registry
+# Agent registry
 
 Agents and what they use, kept as assets with owners and versions, so teams share them instead of copying them.
 
@@ -54,7 +54,7 @@ Agents and what they use, kept as assets with owners and versions, so teams shar
 - **Catalogs.** List assets with owners and versions, grant them by entitlement, and keep assistants to the catalog with managed settings.
 - **Approval.** Try each version on real tasks, check where it comes from and what it carries, and pin it until the next one is approved.
 
-A **shared repository** is often enough for a few teams, and an **agent registry** covers all kinds of agents, but neither enforces the catalog by itself.
+The **harness**, the agent with the assets and settings that it loads, is tried and pinned as a whole, because the same model can behave differently in another harness.
 
 ---
 
