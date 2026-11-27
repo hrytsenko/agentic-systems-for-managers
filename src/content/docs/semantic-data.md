@@ -18,7 +18,7 @@ A model knows only what it learned in training, so the organization's **data**, 
 
 A **data pipeline** runs **ETL**: it extracts data from source systems, transforms it for retrieval, and loads the copy into a store. The same approach loads records into a data warehouse, and those pipelines often exist already, so the new work is usually in documents.
 
-1. **Extract.** The pipeline reads documents from source systems together with their **metadata**, such as the title, owner, date, and permissions, so that search can filter by it and answers can name their source. Sources that outsiders can write to, such as support tickets, need caution, because their text can carry instructions that the model may follow.
+1. **Extract.** The pipeline reads documents from source systems together with their **metadata**, such as the title, owner, date, and permissions, so that search can filter by it and answers can name their source.
 2. **Transform.** The pipeline turns documents into plain text, splits the text into **chunks**, parts short enough to be found and read on their own, and turns each into an **embedding**, a numeric representation of its meaning, with a specialized **embedding model**. Chunk size is a balance: a chunk that is too short loses the surrounding text that explains it, and one that is too long mixes topics, so its embedding matches none of them well.
 3. **Load.** The pipeline writes chunks, embeddings, and metadata to a **vector store**, a database that can compare embeddings. It can be a separate product or an extension of an existing database. Later runs update changed documents and remove deleted ones. Embeddings from different models cannot be compared, so a new embedding model means embedding and loading everything again.
 

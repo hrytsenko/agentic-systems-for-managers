@@ -6,6 +6,8 @@ A lean guide for managers and staff engineers to talk about enterprise agentic s
 
 The home page sets the scope: agents that do business work, not how teams use agents across the software development lifecycle (SDLC), and not how they build, host, and evaluate agents. Examples and data come from business work, and software work appears only where it concerns agent assets.
 
+The guide speaks about agents with high autonomy that work in a secure environment. It explains what each control does, not where it falls short, because defense in depth covers that. It also leaves out a person approving each action, because that defeats the autonomy.
+
 ## Audience
 
 Managers and staff engineers. They judge whether a customer request fits current resources and expertise, or needs more. A detail stays if it changes the cost, the risk, or who has to own it, and solution details beyond that stay out.

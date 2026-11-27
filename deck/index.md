@@ -43,6 +43,51 @@ Adopting agents means controlling the assets that they use, such as skills and M
 
 ---
 
+<!-- _header: Governed agents -->
+<!-- _footer: "Reference: [agentregistry](https://aregistry.ai/), with plugins and approval in the paid edition." -->
+
+# Curated registry
+
+Agents and what they use, kept as assets with owners and versions, so teams share them instead of copying them.
+
+- **Assets.** Describe agents by definitions that reference skills, MCP servers, and plugins.
+- **Catalogs.** List assets with owners and versions, grant them by entitlement, and keep assistants to the catalog with managed settings.
+- **Approval.** Try each version on real tasks, check where it comes from and what it carries, and pin it until the next one is approved.
+
+A **shared repository** is often enough for a few teams, and an **agent registry** covers all kinds of agents, but neither enforces the catalog by itself.
+
+---
+
+<!-- _header: Governed agents -->
+<!-- _footer: "Reference: [LiteLLM](https://www.litellm.ai/), with SSO and most moderation services in the paid edition." -->
+
+# AI gateway
+
+The one way from the organization's agents to all models, including its own. It controls requests on their way out.
+
+- **Access.** Identify callers by the identity system or virtual keys, allow approved models, and apply rate limits.
+- **Routing.** Resolve each model name to a model and platform, route requests by rules, and hold each fallback to the same data rules.
+- **Metering.** Count tokens per caller and model, price them at platform rates, and apply budgets.
+
+**Screening** blocks or masks what breaks a policy in requests and responses, and the logs need masking too.
+
+---
+
+<!-- _header: Governed agents -->
+<!-- _footer: "Reference: [agentgateway](https://agentgateway.dev/), with separate services to detect prompt injection and keep credentials." -->
+
+# MCP gateway
+
+The one way from the organization's agents to all MCP servers. It controls the tools they reach and the access behind them.
+
+- **Servers.** Put approved servers behind one address, show each agent only approved tools, and refuse other tool calls.
+- **Identities.** Identify unattended agents by service accounts, and let assistants act on behalf of users.
+- **Credentials.** Hold credentials in a vault, add them to calls on the way out, and make them narrow and short-lived.
+
+**Guardrails** screen tool calls for confidential data and tool results for prompt injection, and block or mask what they find.
+
+---
+
 # Sovereign models
 
 Sovereign models run on a platform that the organization controls, so the data in requests and responses stays there. Still, sovereignty is about who controls the platform, not who trained the model.
