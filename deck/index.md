@@ -150,8 +150,7 @@ A model published with its weights, the numbers learned in training, so the orga
 
 Semantic data is data that agents can find by its meaning, rather than by exact words or database fields. Still, a model knows only what it learned in training, so the data has to reach it with each task.
 
-- **Data pipeline** prepares a copy of the data for retrieval.
-- **Semantic search** matches documents to a question.
+- **Semantic search** indexes documents and matches them to a question.
 - **Semantic layer** applies business definitions to records.
 - **Knowledge graph** links business entities by one ontology.
 
@@ -161,32 +160,17 @@ Semantic data is data that agents can find by its meaning, rather than by exact 
 ---
 
 <!-- _header: Semantic data -->
-<!-- _footer: "Reference: [Docling](https://docling.ai/), which turns documents into text and chunks for an existing pipeline." -->
-
-# Data pipeline
-
-An ETL that copies documents from source systems and prepares them for retrieval.
-
-- **Extract.** Read documents with their metadata, such as owner, date, and permissions, so search can filter by it.
-- **Transform.** Turn documents into text, split it into chunks, and turn each chunk into an embedding with an embedding model.
-- **Load.** Write chunks, embeddings, and metadata to a vector store, and load everything again when the embedding model changes.
-
-**Provenance** ties each chunk to its source, so search applies its permissions, regular runs keep it current, and the copy follows the source's rules on where data is kept.
-
----
-
-<!-- _header: Semantic data -->
-<!-- _footer: "Reference: [Qdrant](https://qdrant.tech/), which works with rerankers and leaves permissions to the application." -->
+<!-- _footer: "Reference: [Qdrant](https://qdrant.tech/), which stores the index and works with rerankers." -->
 
 # Semantic search
 
-A search for the document chunks closest in meaning to a question.
+A search for the parts of documents closest in meaning to a question, in a copy prepared ahead of time.
 
-- **Match.** Compare the question's embedding with those of the chunks, and add a keyword search for exact terms in hybrid search.
-- **Filter.** Match only chunks with the right metadata, including the permissions of whoever asks.
+- **Index.** Split documents into chunks, and load them with metadata and embeddings into a vector store.
+- **Match.** Compare embeddings, add keywords in hybrid search, and filter by metadata and permissions.
 - **Rank.** Order the chunks by relevance with a reranker, and leave out those not relevant enough.
 
-**Collections** split chunks by area into search tools with their own owners, so the model picks the one that fits and matching compares fewer, closer chunks.
+**Provenance** ties each chunk to its source, so search applies its permissions, regular indexing keeps it current, and the copy follows the source's rules on where data is kept.
 
 ---
 

@@ -5,7 +5,7 @@ description: What semantic data is and what it takes to build it.
 
 A model knows only what it learned in training, so the organization's **data**, such as its documents and records, has to reach it through the **context**, everything that it gets for a task. Finding the right data for a task is called **retrieval**, and adding it to the context so the model can respond with it is **retrieval-augmented generation (RAG)**.
 
-**Semantic data** is data that agents can find by its meaning, rather than by exact words or by table and column names. It relies on a **data pipeline** that prepares a copy of it and on three ways to find it: **semantic search** that matches documents to a question, a **semantic layer** that applies business definitions to records, and a **knowledge graph** that links things, such as suppliers and products.
+**Semantic data** is data that agents can find by its meaning, rather than by exact words or by table and column names. It relies on three ways to find it: **semantic search** that indexes documents and matches them to a question, a **semantic layer** that applies business definitions to records, and a **knowledge graph** that links things, such as suppliers and products.
 
 With **agentic retrieval**, the agent gets these ways to find data as tools, usually through MCP servers, and the model decides which to use, what to ask, and when to look again. It finds more than a single lookup, but takes more steps and tokens. Each tool runs under the agent's identity, its own or a user's, which decides what it may find.
 
@@ -16,29 +16,17 @@ With **agentic retrieval**, the agent gets these ways to find data as tools, usu
 
 :::
 
-## Data pipelines
+## Semantic search
 
-A **data pipeline** runs **ETL**: it extracts data from source systems, transforms it for retrieval, and loads the copy into a store. The same approach loads records into a data warehouse, and those pipelines often exist already, so the new work is usually in documents.
+**Semantic search** finds the parts of documents that are closest in meaning to a question, in a copy of them prepared ahead of time. It usually returns the closest parts even when none of them holds the answer, so finding them is not enough.
 
-1. **Extract.** The pipeline reads documents from source systems together with their **metadata**, such as the title, owner, date, and permissions, so that search can filter by it and answers can name their source.
-2. **Transform.** The pipeline turns documents into plain text, splits the text into **chunks**, parts short enough to be found and read on their own, and turns each into an **embedding**, a numeric representation of its meaning, with a specialized **embedding model**. Chunk size is a balance: a chunk that is too short loses the surrounding text that explains it, and one that is too long mixes topics, so its embedding matches none of them well.
-3. **Load.** The pipeline writes chunks, embeddings, and metadata to a **vector store**, a database that can compare embeddings. It can be a separate product or an extension of an existing database. Later runs update changed documents and remove deleted ones. Embeddings from different models cannot be compared, so a new embedding model means embedding and loading everything again.
+1. **Index.** A **data pipeline** prepares the copy: it reads documents from source systems with their **metadata**, such as the title, owner, date, and permissions, turns them into plain text, and splits the text into **chunks**, parts that can be found and read on their own. A specialized **embedding model** turns each chunk into an **embedding**, a numeric representation of its meaning, and the pipeline loads chunks, embeddings, and metadata into a **vector store**, a database that can compare embeddings. Embeddings from different models cannot be compared, so a new embedding model means indexing everything again.
+2. **Match.** The search turns the question into an embedding and compares it with those of the chunks. **Hybrid search** adds a keyword search for exact terms, such as contract numbers or product codes, and combines both results. Matching can be limited to chunks with the right metadata, but permissions take more: the search has to know who asks and which groups they belong to.
+3. **Rank.** A close chunk can be on the topic without answering the question. A **reranker**, another specialized model, reads the question together with each chunk and orders the chunks by **relevance**, how well they answer it. This improves quality but is slow, so it runs only on the chunks that matching returned. Chunks that are not relevant enough are left out, even if none remain, so the model can say that it has no answer.
 
 **Provenance** is the record of where each chunk came from, such as its source and date. It ties the copy to its sources, which neither protect it with their permissions nor update it on their own. Through it, each chunk keeps the permissions of its document for search to apply, and where they cannot be kept, only what everyone who can search may see should be copied. Each chunk also keeps its **ownership**, who is responsible for the content, so answers can be checked and errors fixed in the source. Regular runs keep the content and permissions current and apply deletions and retention rules, and monitoring catches failed runs, which are easy to miss because search keeps working on the old copy. The copy follows its sources' rules on where data may be processed and kept, and so do the embedding model and the vector store that receive it.
 
-A reference product is [Docling](https://docling.ai/), which turns documents into text and chunks for an existing pipeline.
-
-## Semantic search
-
-**Semantic search** finds the chunks that are closest in meaning to a question. It usually returns the closest chunks even when none of them holds the answer, so finding them is only the first step.
-
-1. **Match.** The search turns the question into an embedding and compares it with those of the chunks, so both have to come from the same embedding model. This is fast even on many chunks. **Hybrid search** adds a keyword search for exact terms, such as contract numbers or product codes, and combines both results.
-2. **Filter.** The search matches only chunks with the right metadata. Most vector stores can filter, but permissions take more: the search has to know who asks and which groups they belong to, usually from the organization's identity system. Permissions cannot be left to instructions, because whatever is in the context can end up in the response.
-3. **Rank.** A close chunk can be on the topic without answering the question. A **reranker**, another specialized model, reads the question together with each chunk and orders the chunks by **relevance**, how well they answer it. This improves quality but is slow, so it runs only on the chunks that matching returned. Chunks that are not relevant enough are left out, even if none remain, so the model can say that it has no answer.
-
-**Collections** split the chunks by area, such as contracts or policies, each offered as a search tool that describes its content. The model picks the one that fits the question, so matching compares fewer, closer chunks, a collection that one group sees in full needs no permissions on each chunk, and each has an owner. A few collections, one per main area of the business, keep the choice easy.
-
-A reference product is [Qdrant](https://qdrant.tech/), which covers matching and filtering and works with rerankers, while permissions are left to the application.
+A reference product is [Qdrant](https://qdrant.tech/), which stores the index, covers matching, and works with rerankers.
 
 ## Semantic layers
 
