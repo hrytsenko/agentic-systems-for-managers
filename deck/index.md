@@ -157,3 +157,63 @@ Semantic data is data that agents can find by its meaning, rather than by exact 
 
 > - **Set ownership.** Only the organization can decide which content is correct and what it means, so each source needs an owner.
 > - **Propagate permissions.** A copy without the permissions of its source can show anyone what only some may see.
+
+---
+
+<!-- _header: Semantic data -->
+<!-- _footer: "Reference: [Docling](https://docling.ai/), which turns documents into text and chunks for an existing pipeline." -->
+
+# Data pipeline
+
+An ETL that copies documents from source systems and prepares them for retrieval.
+
+- **Extract.** Read documents with their metadata, such as owner, date, and permissions, so search can filter by it.
+- **Transform.** Turn documents into text, split it into chunks, and turn each chunk into an embedding with an embedding model.
+- **Load.** Write chunks, embeddings, and metadata to a vector store, and load everything again when the embedding model changes.
+
+**Provenance** ties each chunk to its source, so search applies its permissions, regular runs keep it current, and the copy follows the source's rules on where data is kept.
+
+---
+
+<!-- _header: Semantic data -->
+<!-- _footer: "Reference: [Qdrant](https://qdrant.tech/), which works with rerankers and leaves permissions to the application." -->
+
+# Semantic search
+
+A search for the document chunks closest in meaning to a question.
+
+- **Match.** Compare the question's embedding with those of the chunks, and add a keyword search for exact terms in hybrid search.
+- **Filter.** Match only chunks with the right metadata, including the permissions of whoever asks.
+- **Rank.** Order the chunks by relevance with a reranker, and leave out those not relevant enough.
+
+**Collections** split chunks by area into search tools with their own owners, so the model picks the one that fits and matching compares fewer, closer chunks.
+
+---
+
+<!-- _header: Semantic data -->
+<!-- _footer: "Reference: [WrenAI](https://www.getwren.ai/), which offers definitions and queries over MCP, with permissions in the paid edition." -->
+
+# Semantic layer
+
+A layer that explains datasets to models and calculates metrics from their definitions.
+
+- **Definitions.** Define datasets, relations, metrics, and dimensions, with descriptions and synonyms.
+- **Queries.** Ask for metrics by dimensions, calculate them the same way every time, and name the metrics behind each answer.
+- **Permissions.** Filter rows and columns by who asks, in every query, so the model cannot skip the rules.
+
+Approaches differ in how queries are built: by **named metrics** for control, in a **query language** for flexibility, or by **question and answer** for simplicity.
+
+---
+
+<!-- _header: Semantic data -->
+<!-- _footer: "Reference: [Neo4j](https://neo4j.com/), which covers facts and queries, with permissions in the paid edition." -->
+
+# Knowledge graph
+
+A graph that links things under a common ontology, so one answer can span several systems.
+
+- **Ontology.** List the kinds of things, their links, and rules, so customers in sales and accounts in billing become one kind.
+- **Facts.** Map records to the ontology by their identifiers, and match each entity across sources by entity resolution.
+- **Queries.** Follow links by traversal, within permissions and a limit on depth, and show the links with the answer.
+
+Approaches differ in how facts get in: with **GraphRAG**, a model extracts them from documents, and with a **graph database**, a pipeline loads them from records.
