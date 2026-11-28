@@ -19,6 +19,8 @@ Whether the organization runs models and data itself depends on data terms, but 
 
 ---
 
+<!-- _header: Agentic Systems -->
+
 # Data terms
 
 When a vendor runs a part, its **data terms** decide what happens to the data: whether it is used for training, how long it is kept, and in which region it is processed. The terms fall short, and the organization has to own the part, when:
@@ -27,6 +29,20 @@ When a vendor runs a part, its **data terms** decide what happens to the data: w
 - **A closed network** keeps sensitive systems off the internet, so their data cannot reach a vendor at all.
 
 Where the terms are enough, the vendor's solution is simpler and usually the better choice, so the organization owns a part only for the work that needs it.
+
+---
+
+<!-- _header: Agentic Systems -->
+
+# Teams
+
+Where the organization owns a part, it needs teams with the expertise to run it.
+
+- **Governance team**, with security, sets policies, approves assets and models after they are tried on real tasks, and gives each data source, definition, and ontology an owner.
+- **Data engineers** build the pipelines and monitor their runs.
+- **Platform engineers** run the registry, gateways, stores, and pipelines, and the models on GPUs.
+
+A vendor's solution can take over much of the platform work, but not the governance or the ownership of data.
 
 ---
 
@@ -81,7 +97,7 @@ The one way from the organization's agents to all models, including its own. It 
 The one way from the organization's agents to all MCP servers. It controls the tools they reach and the access behind them.
 
 - **Servers.** Put approved servers behind one address, show each agent only approved tools, and refuse other tool calls.
-- **Identities.** Identify unattended agents by service accounts, and let assistants act on behalf of users.
+- **Identities.** Identify agents inside business processes by service accounts, and let assistants act on behalf of users.
 - **Credentials.** Hold credentials in a vault, add them to calls on the way out, and make them narrow and short-lived.
 
 **Guardrails** screen tool calls for confidential data and tool results for prompt injection, and block or mask what they find.
