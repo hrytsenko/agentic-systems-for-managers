@@ -38,7 +38,7 @@ A **semantic layer** stands between the model and the databases, usually a data 
 
 Approaches to semantic layers differ in who builds the query. With **named metrics**, the model picks metrics and dimensions by name, and the layer builds the query, which gives the most control but needs every metric defined first. With a **query language**, the model builds the query over the definitions, which is more flexible but easier to get wrong. With **question and answer**, the layer's own agent takes the question and builds the query, which is the simplest to use but hides how it chose the metrics.
 
-A reference product is [WrenAI](https://www.getwren.ai/), which gives agents definitions and queries over MCP, while permissions take its paid edition.
+A reference product is [WrenAI](https://www.getwren.ai/), which covers definitions, queries, and permissions, and gives agents access over MCP.
 
 ## Knowledge graphs
 
@@ -50,4 +50,4 @@ A **knowledge graph** stores facts as things and the links between them, so one 
 
 Approaches to knowledge graphs differ in how the facts get in. With **GraphRAG**, a model extracts them from documents, and the search follows links from the matching chunks, which takes less work from people but leaves the facts unchecked. With a **graph database**, a pipeline loads them, and the model explores them by writing its own queries, which is more flexible but leaves the ontology and the facts to the team.
 
-A reference product is [Neo4j](https://neo4j.com/), which covers facts and queries, while permissions take its paid edition.
+A reference product is [Neo4j](https://neo4j.com/), which stores facts and covers queries and permissions.

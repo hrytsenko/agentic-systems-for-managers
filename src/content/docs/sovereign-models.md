@@ -24,7 +24,7 @@ An **inference gateway** is the front door to the models that the organization r
 
 **Monitoring** tracks how long requests wait, how busy the replicas are, and how much each caller uses, so capacity can be planned and its cost split between teams. Logs of full requests can hold personal or confidential data, so they have to follow the same rules as that data on where it is kept and for how long.
 
-A reference product is [llm-d](https://llm-d.ai/), which covers admission, balancing, and rollouts on Kubernetes.
+A reference product is [llm-d](https://llm-d.ai/), which covers admission, cache-aware balancing, and rollouts.
 
 ## Inference engines
 
@@ -36,7 +36,7 @@ An **inference engine** is the software that runs a model on GPUs. The work it d
 
 **Scheduling** decides how many requests the engine runs together and how many wait in a queue. Running more together uses the GPUs better, but each response takes longer, and the memory for their KV caches limits how many fit.
 
-A reference product is [vLLM](https://vllm.ai/), a widely used engine that llm-d works with.
+A reference product is [vLLM](https://vllm.ai/), a widely used engine that runs most open-weight models and covers the KV cache and scheduling.
 
 ## Open-weight models
 

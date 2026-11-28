@@ -24,7 +24,7 @@ An **agent registry** keeps agents and what they use as assets that have owners 
 
 An agent, together with the assets and settings that it loads, makes up its **harness**: everything around the model that decides what it can do. The same model can behave differently in another harness, so what is tried and pinned is the harness as a whole.
 
-A reference product is [agentregistry](https://aregistry.ai/), which covers assets and catalogs, while plugins and approval take its paid edition.
+A reference product is [agentregistry](https://aregistry.ai/), which covers assets, catalogs, and approval.
 
 ## AI gateways
 
@@ -36,7 +36,7 @@ An **AI gateway** is the one way from the organization's agents to models, inclu
 
 **Screening** controls what requests and responses carry: the gateway checks them against a policy, such as rules on personal data, credentials, or harmful content, and blocks or masks what breaks it. The check is done by fixed rules, a small specialized model, or the organization's existing **data loss prevention (DLP)**, a service that looks for sensitive data. The gateway's logs can hold the same data, so they need masking, access rules, and retention limits.
 
-A reference product is [LiteLLM](https://www.litellm.ai/), which covers access, routing, metering, and screening, while SSO and most moderation services take its paid edition.
+A reference product is [LiteLLM](https://www.litellm.ai/), which covers access, routing, and metering, and works with separate services for screening.
 
 ## MCP gateways
 
@@ -48,4 +48,4 @@ An **MCP gateway** is one entry point to all MCP servers. What an agent can do i
 
 **Guardrails** check what tools bring in and send out, because the same tools that do the work can let instructions in and data out. They screen tool calls for confidential data and tool results for **prompt injection**, instructions in content from outsiders, such as a customer's email, that the model may follow. The gateway blocks or masks what they find before it reaches the other system or the model.
 
-A reference product is [agentgateway](https://agentgateway.dev/), which covers servers, identities, and guardrails, and works with separate services to detect prompt injection and keep credentials.
+A reference product is [agentgateway](https://agentgateway.dev/), which covers servers and identities, and works with separate services for guardrails and credentials.

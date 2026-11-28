@@ -24,7 +24,7 @@ Within a topic, each term is defined once, where it first belongs, and is bold t
 
 A topic is split into an intro that gives the whole picture and subtopics that give the details. The intro defines the topic and names its three or four subtopics in one sentence, with a clause on what each does. Each subtopic is a capability that the organization sets up for many teams: it has real tooling, takes expertise to run, and brings value to the business.
 
-Subtopics follow the order in which the intro names them. Each opens with a short paragraph that explains the capability and repeats its term in bold, then lists its three most important aspects, saying what each is and how it works. The aspects build on each other, and a closing paragraph can explain what spans them. A subtopic ends with a reference product, saying what it covers and, if relevant, what needs a paid edition. Free and open-source software (FOSS) is preferred, but not required.
+Subtopics follow the order in which the intro names them. Each opens with a short paragraph that explains the capability and repeats its term in bold, then lists its three most important aspects, saying what each is and how it works. The aspects build on each other, and a closing paragraph can explain what spans them. A subtopic ends with a reference product, saying which of its aspects the product covers and what it leaves to separate services. Editions and prices are left to due diligence. Free and open-source software (FOSS) is preferred, but not required.
 
 ## Takeaways
 

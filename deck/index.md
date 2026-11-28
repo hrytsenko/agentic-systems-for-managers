@@ -60,7 +60,7 @@ Adopting agents means controlling the assets that they use, such as skills and M
 ---
 
 <!-- _header: Governed agents -->
-<!-- _footer: "Reference: [agentregistry](https://aregistry.ai/), with plugins and approval in the paid edition." -->
+<!-- _footer: "Reference product: [agentregistry](https://aregistry.ai/), which covers assets, catalogs, and approval." -->
 
 # Agent registry
 
@@ -75,7 +75,7 @@ The **harness**, the agent with the assets and settings that it loads, is tried 
 ---
 
 <!-- _header: Governed agents -->
-<!-- _footer: "Reference: [LiteLLM](https://www.litellm.ai/), with SSO and most moderation services in the paid edition." -->
+<!-- _footer: "Reference product: [LiteLLM](https://www.litellm.ai/), which covers access, routing, and metering, and works with separate services for screening." -->
 
 # AI gateway
 
@@ -90,7 +90,7 @@ The one way from the organization's agents to all models, including its own. It 
 ---
 
 <!-- _header: Governed agents -->
-<!-- _footer: "Reference: [agentgateway](https://agentgateway.dev/), with separate services to detect prompt injection and keep credentials." -->
+<!-- _footer: "Reference product: [agentgateway](https://agentgateway.dev/), which covers servers and identities, and works with separate services for guardrails and credentials." -->
 
 # MCP gateway
 
@@ -118,7 +118,7 @@ Sovereign models run on a platform that the organization controls, so the data i
 ---
 
 <!-- _header: Sovereign models -->
-<!-- _footer: "Reference: [llm-d](https://llm-d.ai/), which runs on Kubernetes." -->
+<!-- _footer: "Reference product: [llm-d](https://llm-d.ai/), which covers admission, cache-aware balancing, and rollouts." -->
 
 # Inference gateway
 
@@ -133,7 +133,7 @@ The front door to the models that the organization runs. It controls requests on
 ---
 
 <!-- _header: Sovereign models -->
-<!-- _footer: "Reference: [vLLM](https://vllm.ai/), a widely used engine that llm-d works with." -->
+<!-- _footer: "Reference product: [vLLM](https://vllm.ai/), which runs most open-weight models and covers the KV cache and scheduling." -->
 
 # Inference engine
 
@@ -148,7 +148,7 @@ The software that runs a model on GPUs. Turning a request into a response is cal
 ---
 
 <!-- _header: Sovereign models -->
-<!-- _footer: "Reference: [Qwen](https://huggingface.co/Qwen), a model family with open-weight models of many sizes." -->
+<!-- _footer: "Reference product: [Qwen](https://huggingface.co/Qwen), a model family with open-weight models of many sizes." -->
 
 # Open-weight model
 
@@ -176,7 +176,7 @@ Semantic data is data that agents can find by its meaning, rather than by exact 
 ---
 
 <!-- _header: Semantic data -->
-<!-- _footer: "Reference: [Qdrant](https://qdrant.tech/), which stores the index and works with rerankers." -->
+<!-- _footer: "Reference product: [Qdrant](https://qdrant.tech/), which stores the index, covers matching, and works with rerankers." -->
 
 # Semantic search
 
@@ -191,7 +191,7 @@ A search for the parts of documents closest in meaning to a question, in a copy 
 ---
 
 <!-- _header: Semantic data -->
-<!-- _footer: "Reference: [WrenAI](https://www.getwren.ai/), which offers definitions and queries over MCP, with permissions in the paid edition." -->
+<!-- _footer: "Reference product: [WrenAI](https://www.getwren.ai/), which covers definitions, queries, and permissions, and gives agents access over MCP." -->
 
 # Semantic layer
 
@@ -206,7 +206,7 @@ Approaches differ in how queries are built: by **named metrics** for control, in
 ---
 
 <!-- _header: Semantic data -->
-<!-- _footer: "Reference: [Neo4j](https://neo4j.com/), which covers facts and queries, with permissions in the paid edition." -->
+<!-- _footer: "Reference product: [Neo4j](https://neo4j.com/), which stores facts and covers queries and permissions." -->
 
 # Knowledge graph
 
